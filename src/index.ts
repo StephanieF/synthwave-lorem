@@ -73,7 +73,22 @@ const synthwaveWords: WordBank = {
     'retrofit', 'outrun', 'arcade', 'cassette', 'VHS', 'monitor', 'dashboard',
     'vibes', 'aesthetic', 'nightdrive', 'sunset', 'cityscape', 'skyline',
     'highway', 'boulevard', 'avenue', 'corridor', 'dimension', 'reality',
-    'simulation', 'algorithm', 'protocol', 'sequence', 'module', 'system'
+    'simulation', 'algorithm', 'protocol', 'sequence', 'module', 'system',
+    'moonlight', 'dreamscape', 'retrowave', 'nightclub', 'console', 'joystick',
+    'soundscape', 'waveform', 'spectrum', 'signal', 'drive', 'tape', 'diskette',
+    'cyberspace', 'avatar', 'sunglasses', 'nightfall', 'starlight', 'hyperdrive',
+    'overdrive', 'transistor', 'resistor', 'datapath', 'bytecode', 'sidelane',
+    'nightowl', 'afterglow', 'midnight', 'pulse', 'echo', 'reflection', 'mirrorball',
+    'starlane', 'nightshade', 'dreamwave', 'retrosynth', 'neonlight', 'glitch',
+    'sideload', 'uplink', 'downlink', 'modem', 'databank',
+    // New additions
+    'synthpad', 'darkwave', 'cyberpunk', 'neonscape', 'retrograde', 'timeloop',
+    'flashback', 'synthwave', 'laserbeam', 'holodeck', 'datacore', 'mainboard',
+    'synthesizer', 'oscillator', 'arpeggiator', 'reverb', 'chorus', 'delay',
+    'nighttime', 'sunrise', 'neonfall', 'citylight', 'streetlamp', 'billboard',
+    'nexus', 'vertex', 'polygon', 'wireframe', 'framebuffer', 'rasterizer',
+    'cybernaut', 'technomancer', 'datajockey', 'netrunner', 'codebreaker',
+    'dreamstate', 'mindscape', 'voidspace', 'hyperlink', 'bandwidth', 'firewall'
   ],
   adjectives: [
     'electric', 'digital', 'synthetic', 'neon', 'chrome', 'metallic', 'holographic',
@@ -82,7 +97,20 @@ const synthwaveWords: WordBank = {
     'crystalline', 'fluorescent', 'iridescent', 'luminous', 'radiant',
     'pulsing', 'streaming', 'flowing', 'cascading', 'infinite', 'eternal',
     'temporal', 'dimensional', 'parallel', 'quantum', 'atomic', 'molecular',
-    'kinetic', 'dynamic', 'ultra', 'mega', 'hyper', 'super', 'turbo'
+    'kinetic', 'dynamic', 'ultra', 'mega', 'hyper', 'super', 'turbo',
+    'glowing', 'shimmering', 'vaporized', 'nocturnal', 'dreamy', 'hypnotic',
+    'surreal', 'vivid', 'prismatic', 'translucent', 'blazing', 'burning',
+    'twilight', 'midnight', 'galactic', 'celestial', 'astral', 'psychedelic',
+    'vaporwave', 'retrograde', 'chromatic', 'glitchy', 'fragmented', 'fragmentary',
+    'fragmental',
+    // New additions
+    'cybernetic', 'futuristic', 'dystopian', 'utopian', 'techno', 'synthethic',
+    'recursive', 'iterative', 'procedural', 'algorithmic', 'geometric', 'angular',
+    'curved', 'smooth', 'rough', 'textured', 'glossy', 'matte', 'reflective',
+    'transparent', 'opaque', 'saturated', 'desaturated', 'vibrant', 'muted',
+    'intense', 'subtle', 'bold', 'delicate', 'harsh', 'soft', 'sharp', 'blurred',
+    'focused', 'distorted', 'compressed', 'expanded', 'accelerated', 'decelerated',
+    'elevated', 'submerged', 'suspended', 'grounded', 'wireless', 'hardwired'
   ],
   verbs: [
     'synthesize', 'generate', 'transmit', 'broadcast', 'stream', 'process',
@@ -91,13 +119,37 @@ const synthwaveWords: WordBank = {
     'upgrade', 'optimize', 'calibrate', 'synchronize', 'harmonize', 'resonate',
     'vibrate', 'oscillate', 'fluctuate', 'modulate', 'transform', 'convert',
     'decode', 'encode', 'encrypt', 'decrypt', 'compile', 'execute', 'run',
-    'initialize', 'activate', 'engage', 'override', 'bypass', 'hack'
+    'initialize', 'activate', 'engage', 'override', 'bypass', 'hack',
+    'illuminate', 'glow', 'reflect', 'mirror', 'scan', 'uplink', 'download',
+    'upload', 'rewind', 'fastforward', 'loop', 'cycle', 'reboot', 'powerup',
+    'shutdown', 'boot', 'simulate', 'replicate', 'duplicate', 'fragment',
+    'glitch', 'distort', 'warp', 'bend', 'shift', 'phase', 'drift', 'slide',
+    'fade', 'spark', 'ignite', 'charge', 'flash', 'blink', 'flicker',
+    'vaporize', 'dream', 'navigate', 'drive',
+    // New additions
+    'teleport', 'materialize', 'dematerialize', 'digitize', 'analogize', 'pixelate',
+    'rasterize', 'vectorize', 'compress', 'decompress', 'buffer', 'cache',
+    'refresh', 'reload', 'restart', 'hibernate', 'suspend', 'resume',
+    'interface', 'connect', 'disconnect', 'sync', 'desync', 'patch',
+    'update', 'rollback', 'merge', 'branch', 'fork', 'clone',
+    'authenticate', 'authorize', 'validate', 'verify', 'confirm', 'deny',
+    'escalate', 'throttle', 'saturate', 'desaturate', 'intensify', 'diminish'
   ],
   tech: [
     'CPU', 'GPU', 'RAM', 'ROM', 'SSD', 'HDD', 'USB', 'VGA', 'HDMI', 'LCD',
     'LED', 'OLED', 'CRT', 'DOS', 'GUI', 'API', 'URL', 'HTTP', 'TCP', 'IP',
     'WiFi', 'LAN', 'WAN', 'VPN', 'DNS', 'SSL', 'FTP', 'SSH', 'SQL', 'XML',
-    'JSON', 'HTML', 'CSS', 'JS', 'PHP', 'C++', 'Python', 'Java', 'Ruby'
+    'JSON', 'HTML', 'CSS', 'JS', 'PHP', 'C++', 'Python', 'Java', 'Ruby',
+    'BASIC', 'Pascal', 'Perl', 'Fortran', 'COBOL', 'ZX Spectrum', 'Amiga',
+    'Commodore', 'Atari', 'MSX', 'Floppy', 'TapeDrive', 'EPROM',
+    // New additions
+    'EEPROM', 'NVRAM', 'VRAM', 'SRAM', 'DRAM', 'DDR', 'PCIe', 'SATA',
+    'IDE', 'SCSI', 'Bluetooth', 'NFC', 'RFID', 'QR', 'ASCII', 'UTF-8',
+    'Base64', 'SHA-256', 'MD5', 'AES', 'RSA', 'TLS', 'IPv6', 'UDP',
+    'SMTP', 'POP3', 'IMAP', 'MQTT', 'REST', 'SOAP', 'GraphQL', 'WebRTC',
+    'WebGL', 'Canvas', 'SVG', 'PNG', 'JPEG', 'GIF', 'MP3', 'WAV',
+    'MIDI', 'VST', 'DAW', 'EQ', 'LFO', 'ADSR', 'BPM', 'Hz',
+    'dB', 'MHz', 'GHz', 'TB', 'GB', 'MB', 'KB'
   ]
 };
 
