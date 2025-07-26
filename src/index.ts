@@ -385,7 +385,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 50px 20px 20px 20px;
             position: relative;
             z-index: 1;
         }
@@ -431,7 +431,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         input, select {
             padding: 10px;
             border: 2px solid #00ffff;
-            background: rgba(0, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.8);
             color: #00ffff;
             border-radius: 5px;
             font-family: 'Orbitron', monospace;
@@ -441,6 +441,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         input:focus, select:focus {
             outline: none;
             box-shadow: 0 0 15px #00ffff;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Style dropdown options specifically */
+        select option {
+            background: #000;
+            color: #00ffff;
+            border: none;
+            padding: 10px;
+        }
+
+        select option:hover,
+        select option:focus {
+            background: #1a0033;
+            color: #ff00ff;
         }
 
         button {
@@ -498,6 +513,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(255, 0, 255, 0.1);
             border: 2px solid #ff00ff;
             border-radius: 10px;
+            line-height: 1.5;
         }
 
         .api-info h3 {
@@ -511,6 +527,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 2px 5px;
             border-radius: 3px;
             color: #00ffff;
+        }
+
+        .api-info ul {
+            margin-left: 20px;
+        }
+
+        .community-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+
+        .community-info h3 {
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .community-info h3::before {
+            content: "🌆";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .community-info p {
+            margin-bottom: 10px;
+        }
+
+        .community-info ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .community-info a {
+            color: #ff00ff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .community-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -562,6 +623,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><code>sentences</code> - Sentences per paragraph (1-10)</li>
                 <li><code>format</code> - Output format: text, html, or json</li>
             </ul>
+        </div>
+
+        <div class="community-info">
+            <h3>Join the Synthwave Revolution!</h3>
+            <p>This generator is <strong>open source</strong> and powered by the community! Found a bug? Have an awesome idea? Want to add more radical synthwave words? We'd love to hear from you! ⚡</p>
+
+            <p><strong>💫 Ways to contribute:</strong></p>
+            <ul>
+                <li>🐛 <strong>Report bugs</strong> - Help us squash those glitches in the matrix!</li>
+                <li>💡 <strong>Suggest features</strong> - Got ideas to make this even more electric?</li>
+                <li>🌈 <strong>Add new words</strong> - Help expand our synthwave vocabulary!</li>
+                <li>🚀 <strong>Fork & customize</strong> - Make your own version of the generator!</li>
+                <li>⭐ <strong>Star the repo</strong> - Show some love for the project!</li>
+            </ul>
+
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="https://github.com/StephanieF/synthwave-lorem" target="_blank" style="
+                    display: inline-block;
+                    padding: 12px 24px;
+                    background: linear-gradient(45deg, #ff00ff, #00ffff);
+                    color: #000;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    transition: all 0.3s ease;
+                    font-family: 'Orbitron', monospace;
+                ">🔥 View on GitHub 🔥</a>
+            </p>
+
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                Keep the neon dreams alive! 🕶️✨
+            </p>
         </div>
     </div>
 
