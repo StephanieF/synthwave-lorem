@@ -34,6 +34,17 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      });
+    }
+
     // Handle different endpoints
     if (url.pathname === '/api/generate') {
       return handleGenerate(request);
@@ -131,6 +142,12 @@ async function handleGenerate(request: Request): Promise<Response> {
     generatedText.push(generateParagraph(sentences));
   }
 
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
   if (format === 'json') {
     const response: GeneratedResponse = {
       paragraphs: generatedText,
@@ -138,16 +155,16 @@ async function handleGenerate(request: Request): Promise<Response> {
       sentences_per_paragraph: sentences
     };
     return new Response(JSON.stringify(response), {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { ...headers, 'Content-Type': 'application/json' }
     });
   } else if (format === 'html') {
     const htmlParagraphs: string = generatedText.map(p => `<p>${p}</p>`).join('\n');
     return new Response(htmlParagraphs, {
-      headers: { 'Content-Type': 'text/html' }
+      headers: { ...headers, 'Content-Type': 'text/html' }
     });
   } else {
     return new Response(generatedText.join('\n\n'), {
-      headers: { 'Content-Type': 'text/plain' }
+      headers: { ...headers, 'Content-Type': 'text/plain' }
     });
   }
 }
