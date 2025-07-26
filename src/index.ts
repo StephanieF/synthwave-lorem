@@ -185,49 +185,50 @@ async function handleSitemap(request: Request): Promise<Response> {
 
   return new Response(sitemap, {
     headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400'
     }
   });
 }
 
 // Generate sitemap.xml content
 function generateSitemap(baseUrl: string): string {
-  const currentDate = new Date().toISOString();
+  const currentDate = new Date().toISOString().split('T')[0]; // Just date, no time
 
-  // Define your site's URLs
-  const urls = [
-    {
-      loc: baseUrl,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '1.0'
-    },
-    {
-      loc: `${baseUrl}/api/generate`,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '0.8'
-    }
-  ];
-
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-  urls.forEach(url => {
-    sitemap += `
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>${url.loc}</loc>
-    <lastmod>${url.lastmod}</lastmod>
-    <changefreq>${url.changefreq}</changefreq>
-    <priority>${url.priority}</priority>
-  </url>`;
-  });
-
-  sitemap += `
+    <loc>${escapeXml(baseUrl)}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${escapeXml(baseUrl)}/api/generate</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>`;
+}
 
-  return sitemap;
+// Add XML escaping function
+function escapeXml(unsafe: string): string {
+  if (!unsafe) return '';
+
+  return unsafe.replace(/[<>&'"]/g, function (c) {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+      default: return c;
+    }
+  });
 }
 
 // Handle favicon requests
