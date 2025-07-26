@@ -37,6 +37,10 @@ export default {
     // Handle different endpoints
     if (url.pathname === '/api/generate') {
       return handleGenerate(request);
+    } else if (url.pathname === '/sitemap.xml') {
+      return handleSitemap(request);
+    } else if (url.pathname === '/favicon.ico') {
+      return handleFavicon(request);
     } else if (url.pathname === '/') {
       return new Response(getHTML(), {
         headers: { 'Content-Type': 'text/html' }
@@ -148,6 +152,111 @@ async function handleGenerate(request: Request): Promise<Response> {
   }
 }
 
+// Handle sitemap.xml requests
+async function handleSitemap(request: Request): Promise<Response> {
+  const url = new URL(request.url);
+  const baseUrl = `${url.protocol}//${url.host}`;
+
+  const sitemap = generateSitemap(baseUrl);
+
+  return new Response(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+    }
+  });
+}
+
+// Generate sitemap.xml content
+function generateSitemap(baseUrl: string): string {
+  const currentDate = new Date().toISOString();
+
+  // Define your site's URLs
+  const urls = [
+    {
+      loc: baseUrl,
+      lastmod: currentDate,
+      changefreq: 'daily',
+      priority: '1.0'
+    },
+    {
+      loc: `${baseUrl}/api/generate`,
+      lastmod: currentDate,
+      changefreq: 'daily',
+      priority: '0.8'
+    }
+  ];
+
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+  urls.forEach(url => {
+    sitemap += `
+  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${url.lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`;
+  });
+
+  sitemap += `
+</urlset>`;
+
+  return sitemap;
+}
+
+// Handle favicon requests
+async function handleFavicon(request: Request): Promise<Response> {
+  // Generate a synthwave-themed SVG favicon
+  const faviconSvg = generateFaviconSvg();
+
+  return new Response(faviconSvg, {
+    headers: {
+      'Content-Type': 'image/svg+xml',
+      'Cache-Control': 'public, max-age=31536000' // Cache for 1 year
+    }
+  });
+}
+
+// Generate synthwave-themed SVG favicon
+function generateFaviconSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+      </linearGradient>
+      <linearGradient id="grid" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0.8" />
+      </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="32" height="32" fill="#000"/>
+
+    <!-- Grid pattern -->
+    <defs>
+      <pattern id="gridPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+        <path d="M 4 0 L 0 0 0 4" fill="none" stroke="url(#grid)" stroke-width="0.5" opacity="0.6"/>
+      </pattern>
+    </defs>
+    <rect width="32" height="32" fill="url(#gridPattern)"/>
+
+    <!-- Synthwave mountains -->
+    <polygon points="0,24 8,16 16,20 24,12 32,16 32,32 0,32" fill="url(#bg)" opacity="0.8"/>
+
+    <!-- Neon glow effect -->
+    <polygon points="0,24 8,16 16,20 24,12 32,16 32,32 0,32" fill="none" stroke="#00ffff" stroke-width="0.5" opacity="0.9"/>
+
+    <!-- Retro sun -->
+    <circle cx="24" cy="8" r="3" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.9"/>
+    <circle cx="24" cy="8" r="2" fill="none" stroke="#ff00ff" stroke-width="0.5" opacity="0.7"/>
+    <circle cx="24" cy="8" r="1" fill="#ff00ff" opacity="0.8"/>
+  </svg>`;
+}
+
 // HTML Interface
 function getHTML(): string {
   return `<!DOCTYPE html>
@@ -163,6 +272,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synthwave Lorem Ipsum Generator</title>
+    <meta name="description" content="Generate retro-futuristic synthwave-themed placeholder text for your projects. Perfect for 80s-inspired designs and cyberpunk aesthetics.">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/svg+xml" href="/favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
