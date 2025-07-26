@@ -231,17 +231,15 @@ function generateFaviconSvg(): string {
         <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8" />
         <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0.8" />
       </linearGradient>
+      <pattern id="gridPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+        <path d="M 4 0 L 0 0 0 4" fill="none" stroke="url(#grid)" stroke-width="0.5" opacity="0.6"/>
+      </pattern>
     </defs>
 
     <!-- Background -->
     <rect width="32" height="32" fill="#000"/>
 
     <!-- Grid pattern -->
-    <defs>
-      <pattern id="gridPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-        <path d="M 4 0 L 0 0 0 4" fill="none" stroke="url(#grid)" stroke-width="0.5" opacity="0.6"/>
-      </pattern>
-    </defs>
     <rect width="32" height="32" fill="url(#gridPattern)"/>
 
     <!-- Synthwave mountains -->
