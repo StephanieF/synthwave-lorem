@@ -81,14 +81,13 @@ const synthwaveWords: WordBank = {
     'nightowl', 'afterglow', 'midnight', 'pulse', 'echo', 'reflection', 'mirrorball',
     'starlane', 'nightshade', 'dreamwave', 'retrosynth', 'neonlight', 'glitch',
     'sideload', 'uplink', 'downlink', 'modem', 'databank',
-    // New additions
     'synthpad', 'darkwave', 'cyberpunk', 'neonscape', 'retrograde', 'timeloop',
     'flashback', 'synthwave', 'laserbeam', 'holodeck', 'datacore', 'mainboard',
     'synthesizer', 'oscillator', 'arpeggiator', 'reverb', 'chorus', 'delay',
     'nighttime', 'sunrise', 'neonfall', 'citylight', 'streetlamp', 'billboard',
     'nexus', 'vertex', 'polygon', 'wireframe', 'framebuffer', 'rasterizer',
     'cybernaut', 'technomancer', 'datajockey', 'netrunner', 'codebreaker',
-    'dreamstate', 'mindscape', 'voidspace', 'hyperlink', 'bandwidth', 'firewall'
+    'dreamstate', 'mindscape', 'voidspace', 'hyperlink', 'bandwidth', 'firewall', 'New Cydonia'
   ],
   adjectives: [
     'electric', 'digital', 'synthetic', 'neon', 'chrome', 'metallic', 'holographic',
@@ -102,9 +101,7 @@ const synthwaveWords: WordBank = {
     'surreal', 'vivid', 'prismatic', 'translucent', 'blazing', 'burning',
     'twilight', 'midnight', 'galactic', 'celestial', 'astral', 'psychedelic',
     'vaporwave', 'retrograde', 'chromatic', 'glitchy', 'fragmented', 'fragmentary',
-    'fragmental',
-    // New additions
-    'cybernetic', 'futuristic', 'dystopian', 'utopian', 'techno', 'synthethic',
+    'fragmental','cybernetic', 'futuristic', 'dystopian', 'utopian', 'techno', 'synthethic',
     'recursive', 'iterative', 'procedural', 'algorithmic', 'geometric', 'angular',
     'curved', 'smooth', 'rough', 'textured', 'glossy', 'matte', 'reflective',
     'transparent', 'opaque', 'saturated', 'desaturated', 'vibrant', 'muted',
@@ -125,9 +122,7 @@ const synthwaveWords: WordBank = {
     'shutdown', 'boot', 'simulate', 'replicate', 'duplicate', 'fragment',
     'glitch', 'distort', 'warp', 'bend', 'shift', 'phase', 'drift', 'slide',
     'fade', 'spark', 'ignite', 'charge', 'flash', 'blink', 'flicker',
-    'vaporize', 'dream', 'navigate', 'drive',
-    // New additions
-    'teleport', 'materialize', 'dematerialize', 'digitize', 'analogize', 'pixelate',
+    'vaporize', 'dream', 'navigate', 'drive','teleport', 'materialize', 'dematerialize', 'digitize', 'analogize', 'pixelate',
     'rasterize', 'vectorize', 'compress', 'decompress', 'buffer', 'cache',
     'refresh', 'reload', 'restart', 'hibernate', 'suspend', 'resume',
     'interface', 'connect', 'disconnect', 'sync', 'desync', 'patch',
@@ -142,7 +137,6 @@ const synthwaveWords: WordBank = {
     'JSON', 'HTML', 'CSS', 'JS', 'PHP', 'C++', 'Python', 'Java', 'Ruby',
     'BASIC', 'Pascal', 'Perl', 'Fortran', 'COBOL', 'ZX Spectrum', 'Amiga',
     'Commodore', 'Atari', 'MSX', 'Floppy', 'TapeDrive', 'EPROM',
-    // New additions
     'EEPROM', 'NVRAM', 'VRAM', 'SRAM', 'DRAM', 'DDR', 'PCIe', 'SATA',
     'IDE', 'SCSI', 'Bluetooth', 'NFC', 'RFID', 'QR', 'ASCII', 'UTF-8',
     'Base64', 'SHA-256', 'MD5', 'AES', 'RSA', 'TLS', 'IPv6', 'UDP',
