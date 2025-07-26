@@ -1,38 +1,44 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+name: 🐛 Bug Report
+about: Something's glitching in the matrix? Let's debug this synthwave issue!
+title: '[BUG] '
+labels: 'bug'
 assignees: ''
 
 ---
 
+## 🔧 What's causing the static in our synthwave signal?
+
 **Describe the bug**
-A clear and concise description of what the bug is.
+Tell us what went wrong! A clear description of the glitch you encountered.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Navigate to '...'
+2. Click on '...'
+3. Set parameters to '...'
+4. See error/unexpected behavior
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+What should have happened in our perfect synthwave world? ✨
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain your problem. Visual evidence helps us debug faster! 📸
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Environment (please complete the following info):**
+- OS: [e.g. Windows, macOS, Linux]
+- Browser: [e.g. Chrome, Firefox, Safari]
+- Version: [e.g. 22]
+- Device: [e.g. Desktop, Mobile, Tablet]
 
 **Additional context**
-Add any other context about the problem here.
+Any other details about the problem? Error messages in console? Weird behavior patterns? The more intel, the better! 🕵️
+
+**Priority Level**
+How critical is this bug?
+- [ ] Low: Minor annoyance
+- [ ] Medium: Impacts functionality
+- [ ] High: Breaks core features
+- [ ] Critical: Site completely broken
+
+Thanks for helping us keep the synthwave flowing smoothly! 🌊⚡
