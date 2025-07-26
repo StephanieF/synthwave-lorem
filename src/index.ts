@@ -34,6 +34,17 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
+    // Handle CORS preflight requests
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      });
+    }
+
     // Handle different endpoints
     if (url.pathname === '/api/generate') {
       return handleGenerate(request);
@@ -41,6 +52,8 @@ export default {
       return handleSitemap(request);
     } else if (url.pathname === '/favicon.ico' || url.pathname === '/favicon.svg') {
       return handleFavicon(request);
+    } else if (url.pathname === '/robots.txt') {
+      return handleRobots(request);
     } else if (url.pathname === '/') {
       return new Response(getHTML(), {
         headers: { 'Content-Type': 'text/html' }
@@ -531,4 +544,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>`;
+}
+
+// Handle robots.txt requests
+async function handleRobots(request: Request): Promise<Response> {
+  const url = new URL(request.url);
+  const baseUrl = `${url.protocol}//${url.host}`;
+
+  const robots = `User-agent: *
+Allow: /
+Sitemap: ${baseUrl}/sitemap.xml`;
+
+  return new Response(robots, {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400'
+    }
+  });
 }
