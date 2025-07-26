@@ -34,23 +34,12 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    // Handle CORS preflight
-    if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
-      });
-    }
-
     // Handle different endpoints
     if (url.pathname === '/api/generate') {
       return handleGenerate(request);
     } else if (url.pathname === '/sitemap.xml') {
       return handleSitemap(request);
-    } else if (url.pathname === '/favicon.ico') {
+    } else if (url.pathname === '/favicon.ico' || url.pathname === '/favicon.svg') {
       return handleFavicon(request);
     } else if (url.pathname === '/') {
       return new Response(getHTML(), {
@@ -133,9 +122,14 @@ function capitalize(str: string): string {
 // Handle API requests
 async function handleGenerate(request: Request): Promise<Response> {
   const url = new URL(request.url);
-  const paragraphs: number = parseInt(url.searchParams.get('paragraphs') || '3');
-  const sentences: number = parseInt(url.searchParams.get('sentences') || '5');
+  const paragraphs: number = Math.min(Math.max(parseInt(url.searchParams.get('paragraphs') || '3'), 1), 10);
+  const sentences: number = Math.min(Math.max(parseInt(url.searchParams.get('sentences') || '5'), 1), 10);
   const format: string = url.searchParams.get('format') || 'text';
+
+  // Validate format
+  if (!['text', 'html', 'json'].includes(format)) {
+    return new Response('Invalid format. Use: text, html, or json', { status: 400 });
+  }
 
   const generatedText: string[] = [];
   for (let i = 0; i < paragraphs; i++) {
