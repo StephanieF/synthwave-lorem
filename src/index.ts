@@ -633,7 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
 
             <p style="text-align: center; margin-top: 20px;">
-                <a href="https://github.com/StephanieF/synthwave-lorem" target="_blank" style="
+                <a href="https://github.com/StephanieF/synthwave-lorem" target="_blank" onclick="trackGitHubClick()" style="
                     display: inline-block;
                     padding: 12px 24px;
                     background: linear-gradient(45deg, #ff00ff, #00ffff);
@@ -656,6 +656,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         async function generateText() {
+            // GTM tracking for generate button click
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'button_click',
+                    'button_name': 'generate_synthwave_text',
+                    'button_location': 'main_interface',
+                    'paragraphs': document.getElementById('paragraphs').value,
+                    'sentences': document.getElementById('sentences').value,
+                    'format': document.getElementById('format').value
+                });
+            }
+
             const paragraphs = document.getElementById('paragraphs').value;
             const sentences = document.getElementById('sentences').value;
             const format = document.getElementById('format').value;
@@ -678,10 +690,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         function copyToClipboard() {
+            // GTM tracking for copy button click
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'button_click',
+                    'button_name': 'copy_to_clipboard',
+                    'button_location': 'output_interface',
+                    'text_length': document.getElementById('generated-text').innerText.length
+                });
+            }
+
             const text = document.getElementById('generated-text').innerText;
             navigator.clipboard.writeText(text).then(() => {
                 alert('Text copied to clipboard!');
             });
+        }
+
+        function trackGitHubClick() {
+            // GTM tracking for GitHub link click
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'link_click',
+                    'link_name': 'github_repository',
+                    'link_location': 'community_section',
+                    'link_destination': 'github',
+                    'link_type': 'external'
+                });
+            }
         }
     </script>
 </body>
