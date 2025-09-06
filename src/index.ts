@@ -83,11 +83,17 @@ const synthwaveWords: WordBank = {
     'sideload', 'uplink', 'downlink', 'modem', 'databank',
     'synthpad', 'darkwave', 'cyberpunk', 'neonscape', 'retrograde', 'timeloop',
     'flashback', 'synthwave', 'laserbeam', 'holodeck', 'datacore', 'mainboard',
-    'synthesizer', 'oscillator', 'arpeggiator', 'reverb', 'chorus', 'delay',
+    'oscillator', 'arpeggiator', 'reverb', 'chorus', 'delay',
     'nighttime', 'sunrise', 'neonfall', 'citylight', 'streetlamp', 'billboard',
     'nexus', 'vertex', 'polygon', 'wireframe', 'framebuffer', 'rasterizer',
     'cybernaut', 'technomancer', 'datajockey', 'netrunner', 'codebreaker',
-    'dreamstate', 'mindscape', 'voidspace', 'hyperlink', 'bandwidth', 'firewall', 'New Cydonia'
+    'dreamstate', 'mindscape', 'voidspace', 'hyperlink', 'bandwidth', 'firewall', 'New Cydonia',
+    // 50 new nouns
+    'datadisk', 'neonwave', 'dreamcore', 'hypergrid', 'nightzone', 'retrosphere', 'cyberlane', 'glowstick', 'nightdrive', 'synthscape',
+    'bytefield', 'retroscreen', 'neoncity', 'dreamline', 'cybercube', 'nightshade', 'pixelgrid', 'neonarc', 'synthline', 'dreamhub',
+    'retrosky', 'cyberstar', 'neonbeam', 'dreamgate', 'synthcore', 'nightcore', 'retrosun', 'cybermoon', 'neonflare', 'dreamtower',
+    'synthtower', 'retrotower', 'cybercloud', 'neoncloud', 'dreamcloud', 'synthcloud', 'retrowaveform', 'cyberwave', 'neonwaveform', 'dreamwaveform',
+    'synthwaveform', 'retrosignal', 'cybersignal', 'neonsignal', 'dreamsignal', 'synthsignal', 'retrosound', 'cybersound', 'neonsound', 'dreamsound'
   ],
   adjectives: [
     'electric', 'digital', 'synthetic', 'neon', 'chrome', 'metallic', 'holographic',
@@ -101,13 +107,19 @@ const synthwaveWords: WordBank = {
     'surreal', 'vivid', 'prismatic', 'translucent', 'blazing', 'burning',
     'twilight', 'midnight', 'galactic', 'celestial', 'astral', 'psychedelic',
     'vaporwave', 'retrograde', 'chromatic', 'glitchy', 'fragmented', 'fragmentary',
-    'fragmental','cybernetic', 'futuristic', 'dystopian', 'utopian', 'techno', 'synthethic',
+    'fragmental','dystopian', 'utopian', 'techno', 'synthethic',
     'recursive', 'iterative', 'procedural', 'algorithmic', 'geometric', 'angular',
     'curved', 'smooth', 'rough', 'textured', 'glossy', 'matte', 'reflective',
     'transparent', 'opaque', 'saturated', 'desaturated', 'vibrant', 'muted',
     'intense', 'subtle', 'bold', 'delicate', 'harsh', 'soft', 'sharp', 'blurred',
     'focused', 'distorted', 'compressed', 'expanded', 'accelerated', 'decelerated',
-    'elevated', 'submerged', 'suspended', 'grounded', 'wireless', 'hardwired'
+    'elevated', 'submerged', 'suspended', 'grounded', 'wireless', 'hardwired',
+    // 50 new adjectives
+    'iridescent', 'phosphorescent', 'glitching', 'fragmentary', 'noir', 'chromed', 'saturated', 'desaturated', 'vaporous', 'dreamlike',
+    'nightly', 'hazy', 'misty', 'luminescent', 'pulsating', 'electric-blue', 'magenta', 'cyan', 'ultraviolet', 'infrared',
+    'prismatic', 'kaleidoscopic', 'mirrored', 'reflecting', 'transcendent', 'timeless', 'infinite', 'recursive', 'procedural', 'modular',
+    'fragmented', 'fractured', 'splintered', 'shattered', 'pixel-perfect', 'vectorized', 'rasterized', 'analogous', 'digitalized', 'sci-fi',
+    'retrofuturistic', 'hyperreal', 'dreamlike', 'nightmarish', 'phantasmic', 'spectral', 'ghostly', 'otherworldly', 'alien', 'synthetic'
   ],
   verbs: [
     'synthesize', 'generate', 'transmit', 'broadcast', 'stream', 'process',
@@ -128,7 +140,13 @@ const synthwaveWords: WordBank = {
     'interface', 'connect', 'disconnect', 'sync', 'desync', 'patch',
     'update', 'rollback', 'merge', 'branch', 'fork', 'clone',
     'authenticate', 'authorize', 'validate', 'verify', 'confirm', 'deny',
-    'escalate', 'throttle', 'saturate', 'desaturate', 'intensify', 'diminish'
+    'escalate', 'throttle', 'saturate', 'desaturate', 'intensify', 'diminish',
+    // 50 new verbs
+    'modulate', 'oscillate', 'phase', 'refract', 'illuminate', 'scan', 'decode', 'encode', 'encrypt', 'decrypt',
+    'simulate', 'replicate', 'fragment', 'glitch', 'distort', 'warp', 'bend', 'shift', 'drift', 'slide',
+    'fade', 'spark', 'ignite', 'charge', 'flash', 'blink', 'flicker', 'vaporize', 'dream', 'navigate',
+    'teleport', 'materialize', 'dematerialize', 'digitize', 'pixelate', 'vectorize', 'compress', 'decompress', 'buffer', 'cache',
+    'refresh', 'reload', 'restart', 'hibernate', 'suspend', 'resume', 'patch', 'update', 'rollback', 'merge'
   ],
   tech: [
     'CPU', 'GPU', 'RAM', 'ROM', 'SSD', 'HDD', 'USB', 'VGA', 'HDMI', 'LCD',
@@ -143,7 +161,13 @@ const synthwaveWords: WordBank = {
     'SMTP', 'POP3', 'IMAP', 'MQTT', 'REST', 'SOAP', 'GraphQL', 'WebRTC',
     'WebGL', 'Canvas', 'SVG', 'PNG', 'JPEG', 'GIF', 'MP3', 'WAV',
     'MIDI', 'VST', 'DAW', 'EQ', 'LFO', 'ADSR', 'BPM', 'Hz',
-    'dB', 'MHz', 'GHz', 'TB', 'GB', 'MB', 'KB'
+    'dB', 'MHz', 'GHz', 'TB', 'GB', 'MB', 'KB',
+    // 50 new tech terms
+    'S/PDIF', 'FireWire', 'Thunderbolt', 'MiniDisc', 'DAT', 'Blu-ray', 'Laserdisc', 'ZipDrive', 'JazDrive', 'Tape',
+    'Ethernet', 'TokenRing', 'FibreChannel', 'ISDN', 'T1', 'OC-3', 'OC-12', 'OC-48', 'FrameRelay', 'ATM',
+    'X.25', 'PPP', 'SLIP', 'Telnet', 'IRC', 'Gopher', 'WAIS', 'Usenet', 'BBS', 'Modem',
+    'PalmPilot', 'Newton', 'BeOS', 'NeXT', 'SGI', 'Sun', 'DEC', 'VAX', 'PDP', 'Altair',
+    'TRS-80', 'PET', 'Lisa', 'Macintosh', 'PowerPC', 'Itanium', 'Xeon', 'Core', 'Ryzen', 'Threadripper'
   ]
 };
 
