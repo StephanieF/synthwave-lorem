@@ -592,8 +592,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-decoration: underline;
         }
     </style>
-</head>
-<body>
+     <!-- JSON-LD: Website / WebPage / SoftwareApplication / CodeRepository / WebAPI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://loremipsumawesome.com/",
+          "url": "https://loremipsumawesome.com/",
+          "name": "Synthwave Lorem Ipsum Generator",
+          "description": "Radical, retro-futuristic placeholder text generator for synthwave/cyberpunk projects.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "StephanieF",
+            "url": "https://github.com/StephanieF"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://loremipsumawesome.com/",
+          "url": "https://loremipsumawesome.com/",
+          "name": "Synthwave Lorem Ipsum Generator",
+          "description": "Generate retro-futuristic placeholder text in plain text, HTML or JSON.",
+          "isPartOf": { "@id": "https://loremipsumawesome.com/" },
+          "primaryImageOfPage": "https://loremipsumawesome.com/og-image.png",
+          "inLanguage": "en",
+          "mainEntity": { "@id": "https://loremipsumawesome.com/" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://loremipsumawesome.com/",
+          "name": "Synthwave Lorem Ipsum Generator",
+          "url": "https://loremipsumawesome.com/",
+          "applicationCategory": "DeveloperTool",
+          "operatingSystem": "Cloudflare Workers",
+          "description": "A synthwave-themed lorem ipsum generator. Output formats: text, html, json.",
+          "softwareVersion": "1.0.0",
+          "codeRepository": "https://github.com/StephanieF/synthwave-lorem"
+        },
+        {
+          "@type": "CodeRepository",
+          "@id": "https://github.com/StephanieF/synthwave-lorem#repo",
+          "name": "synthwave-lorem",
+          "url": "https://github.com/StephanieF/synthwave-lorem",
+          "license": "https://opensource.org/licenses/MIT",
+          "programmingLanguage": "TypeScript"
+        },
+        {
+          "@type": "WebAPI",
+          "@id": "https://loremipsumawesome.com/api/generate?paragraphs={paragraphs}&sentences={sentences}&format={format}",
+          "name": "Synthwave Lorem Ipsum API",
+          "description": "API for generating synthwave-themed placeholder text.",
+          "documentation": "https://loremipsumawesome.com/",
+          "endpointDescription": "GET /api/generate?paragraphs={paragraphs}&sentences={sentences}&format={format}",
+          "entryPoint": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://loremipsumawesome.com/api/generate?paragraphs={paragraphs}&sentences={sentences}&format={format}",
+            "httpMethod": "GET",
+            "encodingType": "application/json"
+          }
+        }
+      ]
+    }
+    </script>
+    <head>
+    <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XDLHLV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
